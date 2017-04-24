@@ -1,0 +1,13 @@
+.idea
+deployment
+userlib/*
+.classpath
+.project
+SlackConnector.iml
+*.bak
+*.lock
+*.launch
+data-snapshot.zip
+.svn
+.mendix-cache
+lb
