@@ -1,0 +1,53 @@
+version: '3.7'
+
+services:
+    slackrekognition:
+        image: docker-virtual.artifactory.rnd.mendix.com/mxdev-7.20.1.42397
+        user: 1052062:1049089
+        restart: on-failure:5
+        volumes:
+            - .:/source
+        environment:
+            DATABASE_ENDPOINT: 'postgres://mendix:mendix@db:5432/devdb1'
+            MICROFLOW_CONSTANTS: '"Main.CONFIG_NAME": "Prod"'
+            AGENT_CONFIG: '{ "requestHandlers": [ { "name": "*" } ], "microflows": [ { "name": "*.ivk*" },{ "name": "*.api*" } ], "activities": [ { "name": "*" } ] }'
+            STATSD_HOST: localhost
+            STATSD_PORT: 8125
+            MX_LOG_LEVELS: '{"name":"OData Publish", "level":"DEBUG"}, { "name":"ODataConsume", "level":"DEBUG"}, { "name":"Metrics", "level":"INFO"}'
+            DD_LOG_HOST: datadog
+            DD_LOG_PORT: 10518
+            APP_NAME: slack-rekognition
+        ports:
+            - 8180:8080
+        links:
+            - db
+        labels:
+            com.mendix.app: 'slack-rekognition'
+        networks:
+            slack_system:
+                aliases:
+                    - slack-rekognition.local
+        healthcheck:
+            test: ["CMD", "app_admin_send", "{\"action\": \"check_health\", \"params\":{} }'"]
+            interval: 15s
+            retries: 2
+            start_period: 10s
+            timeout: 3s
+    db:
+        image: postgres
+        healthcheck:
+            test: ["CMD", "pg_isready", "-U", "mendix"]
+            interval: 5s
+            retries: 10
+            start_period: 10s
+            timeout: 2s
+        environment:
+            - POSTGRES_USER=mendix
+            - POSTGRES_PASSWORD=mendix
+        networks:
+            slack_system:
+                aliases:
+                    - db.local
+
+networks:
+    slack_system:

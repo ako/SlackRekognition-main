@@ -29,6 +29,7 @@ public class MxAwsLexConnector {
                 build();
 
 
+
     }
     public LexResult getIntentForUtterance(String AwsAccessKeyId, String AwsSecretAccessKey, String awsRegion, String botName, String botAlias, String userId, String utterance) {
         AWSCredentials credentials = new BasicAWSCredentials(AwsAccessKeyId, AwsSecretAccessKey);

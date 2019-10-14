@@ -108,7 +108,7 @@ public class ApiConnectorHandler extends RequestHandler {
                         stringPayload = new BufferedReader(new InputStreamReader(iMxRuntimeRequest.getInputStream()))
                                 .lines().collect(Collectors.joining("\n"));
                     } else {
-                        List<IMendixObject> objs = Core.importStream(ctx, iMxRuntimeRequest.getInputStream(),
+                        List<IMendixObject> objs = Core.integration().importStream(ctx, iMxRuntimeRequest.getInputStream(),
                                 endpoint.getRequestMappingName(), null, false);
                         logger.info("Import mapping result: " + objs.size());
                         objectPayload = objs.get(0);
@@ -230,7 +230,7 @@ public class ApiConnectorHandler extends RequestHandler {
                     } else {
                         if (resultObject != null && resultObject instanceof IMendixObject) {
                             logger.info("Mapping result object: " + resultObject.toString());
-                            InputStream is = Core.exportStream(ctx, endpoint.getResponseMappingName(), (IMendixObject) resultObject, false);
+                            InputStream is = Core.integration().exportToStream(ctx, endpoint.getResponseMappingName(), (IMendixObject) resultObject, false);
                             OutputStream os = iMxRuntimeResponse.getOutputStream();
                             ByteStreams.copy(is, os);
                             is.close();

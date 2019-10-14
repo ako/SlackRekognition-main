@@ -155,8 +155,8 @@ public class MxObjectToHashmapConverter {
                 case AutoNumber:
                 case Long:
                 case Boolean:
-                case Currency:
-                case Float:
+                //case Currency:
+                //case Float:
                 case Integer:
                     if (value == null) {
                         LOGGER.warn("Got 'null' as value for primitive '" + targetMemberName + "'");

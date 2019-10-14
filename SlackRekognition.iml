@@ -34,7 +34,7 @@
       <src_folder value="file://$MODULE_DIR$/javasource" expected_position="0" />
     </src_description>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/deployment/run/bin" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
@@ -306,5 +306,7 @@
     <orderEntry type="library" name="userlib" level="project" />
     <orderEntry type="library" name="com.mixpanel:mixpanel-java:1.4.4" level="project" />
     <orderEntry type="library" name="runtime" level="project" />
+    <orderEntry type="library" name="com.datadoghq:java-dogstatsd-client:2.3" level="project" />
+    <orderEntry type="library" name="com.cloudbees:syslog-java-client:1.0.8" level="project" />
   </component>
 </module>
