@@ -254,6 +254,33 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static java.lang.String postImageFaces(IContext context, system.proxies.HttpRequest _httpRequest, system.proxies.HttpResponse _httpResponse, main.proxies.SlackImage _slackImage)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("httpRequest", _httpRequest == null ? null : _httpRequest.getMendixObject());
+			params.put("httpResponse", _httpResponse == null ? null : _httpResponse.getMendixObject());
+			params.put("SlackImage", _slackImage == null ? null : _slackImage.getMendixObject());
+			return (java.lang.String)Core.execute(context, "Main.PostImageFaces", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void registerApisWithDataHub(IContext context)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			Core.execute(context, "Main.RegisterApisWithDataHub", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static main.proxies.SlackImageRecognitionRequest rekognizeImage(IContext context, main.proxies.SlackImageRecognitionRequest _slackImageRecognitionRequest)
 	{
 		try

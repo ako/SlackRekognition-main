@@ -1,0 +1,70 @@
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/image/jpeg
+
+< /Users/ako/Pictures/daf58b.jpg
+
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/jpeg
+
+< /Users/ako/Pictures/02-still-for-america-room-loop-superJumbo.jpg
+
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/jpeg
+
+< /Users/ako/Pictures/1513304738665.jpg
+
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/png
+
+< /Users/ako/Pictures/All-the-Presidents.png
+
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/jpeg
+
+< /Users/ako/Pictures/dutch-royalty.jpg
+
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/jpeg
+
+< /Users/ako/Pictures/featured_5_3-t.jpg
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/jpeg
+
+< /Users/ako/Pictures/IMG_0447.JPG
+
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/png
+
+< /Users/ako/Pictures/image.png
+
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/jpeg
+
+< /Users/ako/Pictures/dinosaurs-ppt-with-info-21-728.jpg
+
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/jpeg
+
+< /Users/ako/Pictures/person1.jpg
+
+
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/jpeg
+
+< /Users/ako/Pictures/
+### Post image
+POST http://localhost:8080/api/image
+Content-Type: image/jpeg
+
+< /Users/ako/Pictures/trump_clinton_obama_fb.jpg

@@ -10,6 +10,11 @@ public class Constants
 {
 	// These are the constants for the Main module
 
+	public static java.lang.String getAWS_S3_BUCKET()
+	{
+		return (java.lang.String)Core.getConfiguration().getConstantValue("Main.AWS_S3_BUCKET");
+	}
+
 	public static java.lang.String getCONFIG_NAME()
 	{
 		return (java.lang.String)Core.getConfiguration().getConstantValue("Main.CONFIG_NAME");

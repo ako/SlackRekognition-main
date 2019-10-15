@@ -7,15 +7,6 @@ public class UserActionsRegistrar
   public void registerActions(IActionRegistrator registrator)
   {
     registrator.bundleComponentLoaded();
-    registrator.registerUserAction(apiconnector.actions.ApiHeaderLocation.class);
-    registrator.registerUserAction(apiconnector.actions.ApiResponseCacheControl.class);
-    registrator.registerUserAction(apiconnector.actions.ApiResponseContentType.class);
-    registrator.registerUserAction(apiconnector.actions.ApiStatus404NotFound.class);
-    registrator.registerUserAction(apiconnector.actions.ApiStatusCreated201.class);
-    registrator.registerUserAction(apiconnector.actions.RegisterApiEndpoint.class);
-    registrator.registerUserAction(apiconnector.actions.RegisterApiEndpointOqlWithMappings.class);
-    registrator.registerUserAction(apiconnector.actions.RegisterApiEndpointWithMappings.class);
-    registrator.registerUserAction(apiconnector.actions.RegisterApiEndpointXpathWithMappings.class);
     registrator.registerUserAction(awslex.actions.GetUtteranceIntent.class);
     registrator.registerUserAction(awslex.actions.GetUtteranceIntentDetails.class);
     registrator.registerUserAction(main.actions.CleanupSlackMessage.class);
